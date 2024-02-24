@@ -13,7 +13,7 @@ public class FindPedidoByIdService implements FindPedidoByIdUseCase {
     private final FindPedidoByIdPort findPedidoByIdPort;
 
     @Override
-    public Pedido findById(Integer id) {
+    public Pedido findById(Long id) {
         return findPedidoByIdPort.findById(id);
     }
 }

@@ -12,7 +12,7 @@ public class FindClienteByIdService implements FindClienteByIdUseCase {
     private final FindClienteByIdPort findClienteByIdPort;
 
     @Override
-    public Cliente findById(Integer id) {
+    public Cliente findById(Long id) {
         return findClienteByIdPort.findById(id);
     }
 }

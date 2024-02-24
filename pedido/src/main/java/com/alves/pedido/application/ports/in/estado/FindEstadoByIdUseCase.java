@@ -4,5 +4,5 @@ import com.alves.pedido.domain.models.Categoria;
 import com.alves.pedido.domain.models.Estado;
 
 public interface FindEstadoByIdUseCase {
-    Estado findById(Integer id);
+    Estado findById(Long id);
 }

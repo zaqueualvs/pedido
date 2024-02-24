@@ -1,9 +1,10 @@
 package com.alves.pedido.domain.models;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Endereco {
-    private Integer id;
+public class Endereco implements Serializable {
+    private Long id;
     private String logradouro;
     private String numero;
     private String complemento;
@@ -14,7 +15,7 @@ public class Endereco {
     public Endereco() {
     }
 
-    public Endereco(Integer id,
+    public Endereco(Long id,
                     String logradouro,
                     String numero,
                     String complemento,
@@ -30,11 +31,11 @@ public class Endereco {
         this.cidade = cidade;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

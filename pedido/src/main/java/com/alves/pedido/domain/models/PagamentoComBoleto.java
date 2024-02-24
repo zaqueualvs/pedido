@@ -11,7 +11,7 @@ public class PagamentoComBoleto extends Pagamento{
     public PagamentoComBoleto() {
     }
 
-    public PagamentoComBoleto(Integer id,
+    public PagamentoComBoleto(Long id,
                               EstadoPagamento estadoPagamento,
                               OffsetDateTime dataVencimento,
                               OffsetDateTime dataPagamento) {

@@ -5,7 +5,7 @@ import com.alves.pedido.domain.models.enums.TipoCliente;
 import java.util.*;
 
 public class Cliente {
-    private Integer id;
+    private Long id;
     private String nome;
     private String email;
     private String cnpjOuCpf;
@@ -17,29 +17,25 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(Integer id,
+    public Cliente(Long id,
                    String nome,
                    String email,
                    String cnpjOuCpf,
                    TipoCliente tipoCliente,
-                   Endereco endereco,
-                   Set<Telefone> telefones,
-                   List<Pedido> pedidos) {
+                   Endereco endereco) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.cnpjOuCpf = cnpjOuCpf;
         this.tipoCliente = tipoCliente;
         this.endereco = endereco;
-        this.telefones = telefones;
-        this.pedidos = pedidos;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

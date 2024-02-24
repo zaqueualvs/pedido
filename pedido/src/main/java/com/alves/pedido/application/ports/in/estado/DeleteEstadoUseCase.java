@@ -4,6 +4,6 @@ import com.alves.pedido.domain.models.Categoria;
 import com.alves.pedido.domain.models.Estado;
 
 public interface DeleteEstadoUseCase {
-    void delete(Estado estado);
+    void delete(Long id);
 
 }

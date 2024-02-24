@@ -2,6 +2,8 @@ package com.alves.pedido.application.ports.out.estado;
 
 import com.alves.pedido.domain.models.Estado;
 
+import java.util.Optional;
+
 public interface FindEstadoByIdPort {
-    Estado findById(Integer id);
+    Optional<Estado> findById(Long id);
 }

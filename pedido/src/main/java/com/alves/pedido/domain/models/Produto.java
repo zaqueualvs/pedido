@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Produto implements Serializable {
-    private Integer id;
+    private Long id;
     private String nome;
     private BigDecimal preco;
     private Set<Categoria> categorias = new HashSet<>();
@@ -15,18 +15,17 @@ public class Produto implements Serializable {
     public Produto() {
     }
 
-    public Produto(Integer id, String nome, BigDecimal preco, Set<Categoria> categorias) {
+    public Produto(Long id, String nome, BigDecimal preco) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
-        this.categorias = categorias;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

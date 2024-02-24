@@ -4,11 +4,11 @@ import com.alves.pedido.adapters.out.database.h2.entities.CategoriaEntity;
 import com.alves.pedido.adapters.out.database.h2.mapper.CategoriaPersistenceMapper;
 import com.alves.pedido.adapters.out.database.h2.repositories.CategoriaRepository;
 import com.alves.pedido.application.ports.out.categoria.SaveCategoriaPort;
-import com.alves.pedido.commons.customannotation.PersitenceAdapter;
+import com.alves.pedido.commons.customannotation.PersistenceAdapter;
 import com.alves.pedido.domain.models.Categoria;
 import lombok.RequiredArgsConstructor;
 
-@PersitenceAdapter
+@PersistenceAdapter
 @RequiredArgsConstructor
 public class SaveCategoriaPersistenceAdapter implements SaveCategoriaPort {
 

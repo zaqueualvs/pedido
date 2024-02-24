@@ -1,8 +1,6 @@
 package com.alves.pedido.adapters.out.database.h2.entities;
 
-import com.alves.pedido.domain.models.Categoria;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,7 +10,6 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
@@ -22,7 +19,7 @@ public class ProdutoEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String nome;
     private BigDecimal preco;
     @ManyToMany
@@ -30,4 +27,10 @@ public class ProdutoEntity implements Serializable {
             joinColumns = @JoinColumn(name = "produto_id"),
             inverseJoinColumns = @JoinColumn(name = "categoria_id"))
     private Set<CategoriaEntity> categorias = new HashSet<>();
+
+    public ProdutoEntity(Long id, String nome, BigDecimal preco) {
+        this.id = id;
+        this.nome = nome;
+        this.preco = preco;
+    }
 }

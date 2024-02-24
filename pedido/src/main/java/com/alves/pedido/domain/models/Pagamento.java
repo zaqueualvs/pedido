@@ -5,22 +5,22 @@ import com.alves.pedido.domain.models.enums.EstadoPagamento;
 import java.util.Objects;
 
 public abstract class Pagamento {
-    private Integer id;
+    private Long id;
     private EstadoPagamento estadoPagamento;
 
     public Pagamento() {
     }
 
-    public Pagamento(Integer id, EstadoPagamento estadoPagamento) {
+    public Pagamento(Long id, EstadoPagamento estadoPagamento) {
         this.id = id;
         this.estadoPagamento = estadoPagamento;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

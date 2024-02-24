@@ -1,24 +1,25 @@
 package com.alves.pedido.domain.models;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Estado {
-    private Integer id;
+public class Estado implements Serializable {
+    private Long id;
     private String nome;
 
     public Estado() {
     }
 
-    public Estado(Integer id, String nome) {
+    public Estado(Long id, String nome) {
         this.id = id;
         this.nome = nome;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

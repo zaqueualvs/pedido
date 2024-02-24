@@ -4,13 +4,13 @@ import com.alves.pedido.adapters.out.database.h2.entities.CategoriaEntity;
 import com.alves.pedido.adapters.out.database.h2.mapper.CategoriaPersistenceMapper;
 import com.alves.pedido.adapters.out.database.h2.repositories.CategoriaRepository;
 import com.alves.pedido.application.ports.out.categoria.FindCategoriaByIdPort;
-import com.alves.pedido.commons.customannotation.PersitenceAdapter;
+import com.alves.pedido.commons.customannotation.PersistenceAdapter;
 import com.alves.pedido.domain.models.Categoria;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;
 
-@PersitenceAdapter
+@PersistenceAdapter
 @RequiredArgsConstructor
 public class FindCategoriaByIdPersistenceAdapter implements FindCategoriaByIdPort {
 
@@ -18,12 +18,12 @@ public class FindCategoriaByIdPersistenceAdapter implements FindCategoriaByIdPor
     private final CategoriaPersistenceMapper categoriaPersistenceMapper;
 
     @Override
-    public Optional<Categoria> findById(Integer id) {
-        Optional<CategoriaEntity> categoriaEntity = categoriaRepository.findById(id);
-        if (categoriaEntity.isEmpty()) {
+    public Optional<Categoria> findById(Long id) {
+        Optional<CategoriaEntity> categoriaEntityO = categoriaRepository.findById(id);
+        if (categoriaEntityO.isEmpty()) {
             return Optional.empty();
         }
-        Categoria categoria = categoriaPersistenceMapper.toDomain(categoriaEntity.get());
+        Categoria categoria = categoriaPersistenceMapper.toDomain(categoriaEntityO.get());
         return Optional.of(categoria);
     }
 }

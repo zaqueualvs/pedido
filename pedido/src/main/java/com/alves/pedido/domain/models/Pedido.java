@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Pedido {
-    private Integer id;
+    private Long id;
     private OffsetDateTime date;
     private List<ItemPedido> itemPedidos = new ArrayList<>();
     private Endereco enderecoEntrega;
@@ -15,19 +15,21 @@ public class Pedido {
     public Pedido() {
     }
 
-    public Pedido(Integer id, OffsetDateTime date, List<ItemPedido> itemPedidos, Endereco enderecoEntrega, Cliente cliente) {
+    public Pedido(Long id,
+                  OffsetDateTime date,
+                  Endereco enderecoEntrega,
+                  Cliente cliente) {
         this.id = id;
         this.date = date;
-        this.itemPedidos = itemPedidos;
         this.enderecoEntrega = enderecoEntrega;
         this.cliente = cliente;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -1,26 +1,27 @@
 package com.alves.pedido.domain.models;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Cidade {
-    private Integer id;
+public class Cidade  implements Serializable {
+    private Long id;
     private String nome;
     private Estado estado;
 
     public Cidade() {
     }
 
-    public Cidade(Integer id, String nome, Estado estado) {
+    public Cidade(Long id, String nome, Estado estado) {
         this.id = id;
         this.nome = nome;
         this.estado = estado;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

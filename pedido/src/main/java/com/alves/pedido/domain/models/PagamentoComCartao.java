@@ -8,7 +8,7 @@ public class PagamentoComCartao extends Pagamento {
     public PagamentoComCartao() {
     }
 
-    public PagamentoComCartao(Integer id,
+    public PagamentoComCartao(Long id,
                               EstadoPagamento estadoPagamento,
                               Integer numeroDeParcelas) {
         super(id, estadoPagamento);

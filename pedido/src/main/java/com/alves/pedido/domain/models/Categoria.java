@@ -6,23 +6,23 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Categoria implements Serializable {
-    private Integer id;
+    private Long id;
     private String nome;
     private Set<Produto> produtos = new HashSet<>();
 
     public Categoria() {
     }
 
-    public Categoria(Integer id, String nome) {
+    public Categoria(Long id, String nome) {
         this.id = id;
         this.nome = nome;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -32,6 +32,14 @@ public class Categoria implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Set<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(Set<Produto> produtos) {
+        this.produtos = produtos;
     }
 
     @Override
