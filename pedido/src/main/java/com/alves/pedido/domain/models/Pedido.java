@@ -1,11 +1,12 @@
 package com.alves.pedido.domain.models;
 
+import java.io.Serializable;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Pedido {
+public class Pedido implements Serializable {
     private Long id;
     private OffsetDateTime date;
     private List<ItemPedido> itemPedidos = new ArrayList<>();

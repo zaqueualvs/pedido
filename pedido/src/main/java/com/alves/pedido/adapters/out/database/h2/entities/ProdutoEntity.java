@@ -1,6 +1,7 @@
 package com.alves.pedido.adapters.out.database.h2.entities;
 
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,12 +14,14 @@ import java.util.Set;
 @NoArgsConstructor
 @Setter
 @Getter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "produto")
 public class ProdutoEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Long id;
     private String nome;
     private BigDecimal preco;
@@ -33,4 +36,5 @@ public class ProdutoEntity implements Serializable {
         this.nome = nome;
         this.preco = preco;
     }
+
 }

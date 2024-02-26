@@ -2,9 +2,10 @@ package com.alves.pedido.domain.models;
 
 import com.alves.pedido.domain.models.enums.TipoCliente;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Cliente {
+public class Cliente implements Serializable {
     private Long id;
     private String nome;
     private String email;
