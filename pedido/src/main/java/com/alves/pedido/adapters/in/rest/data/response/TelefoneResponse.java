@@ -1,6 +1,5 @@
-package com.alves.pedido.adapters.out.database.h2.entities;
+package com.alves.pedido.adapters.in.rest.data.response;
 
-import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +9,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-@Embeddable
-public class TelefoneEntity {
+public class TelefoneResponse {
     private String telefone;
 }

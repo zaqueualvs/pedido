@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Cidade  implements Serializable {
     private Long id;
     private String nome;
-    private Estado estado;
+    private  Estado estado;
 
     public Cidade() {
     }

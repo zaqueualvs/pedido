@@ -1,11 +1,14 @@
 package com.alves.pedido.domain.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Estado implements Serializable {
     private Long id;
     private String nome;
+    private List<Cidade> cidades = new ArrayList<>();
 
     public Estado() {
     }
@@ -29,6 +32,14 @@ public class Estado implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<Cidade> getCidades() {
+        return cidades;
+    }
+
+    public void setCidades(List<Cidade> cidades) {
+        this.cidades = cidades;
     }
 
     @Override

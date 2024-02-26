@@ -11,7 +11,7 @@ public class Cliente implements Serializable {
     private String email;
     private String cnpjOuCpf;
     private TipoCliente tipoCliente;
-    private Endereco endereco;
+    private List<Endereco> enderecos = new ArrayList<>();
     private Set<Telefone> telefones = new HashSet<>();
     private List<Pedido> pedidos = new ArrayList<>();
 
@@ -22,14 +22,12 @@ public class Cliente implements Serializable {
                    String nome,
                    String email,
                    String cnpjOuCpf,
-                   TipoCliente tipoCliente,
-                   Endereco endereco) {
+                   TipoCliente tipoCliente) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.cnpjOuCpf = cnpjOuCpf;
         this.tipoCliente = tipoCliente;
-        this.endereco = endereco;
     }
 
     public Long getId() {
@@ -72,12 +70,12 @@ public class Cliente implements Serializable {
         this.tipoCliente = tipoCliente;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
+    public List<Endereco> getEnderecos() {
+        return enderecos;
     }
 
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
     }
 
     public Set<Telefone> getTelefones() {

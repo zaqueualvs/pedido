@@ -24,27 +24,33 @@ public class ClienteEntity implements Serializable {
     private String nome;
     private String email;
     private String cnpjOuCpf;
-    private TipoCliente tipoCliente;
-    @OneToOne
-    private EnderecoEntity endereco;
+    private Integer tipoCliente;
+    @OneToMany(mappedBy = "cliente")
+    private List<EnderecoEntity> enderecos = new ArrayList<>();
     @ElementCollection
     @CollectionTable(name = "cliente_telefone",
             joinColumns = @JoinColumn(name = "cliente_id"))
     private Set<TelefoneEntity> telefones = new HashSet<>();
-    @OneToMany(mappedBy = "cliente")
-    private List<PedidoEntity> pedidos = new ArrayList<>();
+    /*@OneToMany(mappedBy = "cliente")
+    private List<PedidoEntity> pedidos = new ArrayList<>();*/
 
     public ClienteEntity(Long id,
                          String nome,
                          String email,
                          String cnpjOuCpf,
-                         TipoCliente tipoCliente,
-                         EnderecoEntity endereco) {
+                         TipoCliente tipoCliente) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.cnpjOuCpf = cnpjOuCpf;
-        this.tipoCliente = tipoCliente;
-        this.endereco = endereco;
+        this.tipoCliente = tipoCliente.getCod();
+    }
+
+    public TipoCliente getTipoCliente() {
+        return TipoCliente.toEnum(tipoCliente);
+    }
+
+    public void setTipoCliente(TipoCliente tipoCliente) {
+        this.tipoCliente = tipoCliente.getCod();
     }
 }

@@ -13,12 +13,13 @@ import java.io.Serializable;
 @Setter
 @Getter
 @Entity
-@Table
+@Table(name = "cidade")
 public class CidadeEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     @ManyToOne
+    @JoinColumn(name = "estado_id")
     private EstadoEntity estado;
 }

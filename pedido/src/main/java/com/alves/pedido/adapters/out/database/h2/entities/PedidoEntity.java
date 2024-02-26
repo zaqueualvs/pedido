@@ -28,6 +28,6 @@ public class PedidoEntity implements Serializable {
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private List<ItemPedidoEntity> itemPedidos = new ArrayList<>();
     private Endereco enderecoEntrega;
-    @ManyToOne
-    private ClienteEntity cliente;
+    /*@ManyToOne
+    private ClienteEntity cliente;*/
 }

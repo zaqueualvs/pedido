@@ -1,9 +1,9 @@
 package com.alves.pedido.domain.models.enums;
 
 public enum EstadoPagamento {
-    PENDENTE("pendente"),
-    QUITADO("quitado"),
-    CANCELADO("cancelado");
+    PENDENTE("Pendente"),
+    QUITADO("Quitado"),
+    CANCELADO("Cancelado");
 
     private String status;
 
