@@ -25,9 +25,12 @@ public class PedidoEntity implements Serializable {
     @EqualsAndHashCode.Include
     private Long id;
     private OffsetDateTime date;
+    @OneToOne
+    private EnderecoEntity enderecoEntrega;
+    @OneToOne
+    private PagamentoEntity pagamento;
+    @ManyToOne
+    private ClienteEntity cliente;
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private List<ItemPedidoEntity> itemPedidos = new ArrayList<>();
-    private Endereco enderecoEntrega;
-    /*@ManyToOne
-    private ClienteEntity cliente;*/
 }

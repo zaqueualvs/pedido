@@ -1,6 +1,6 @@
 package com.alves.pedido.domain.exception;
 
-public class CidadeNaoEncontradaException extends EntidadeNãoEncontradaException {
+public class CidadeNaoEncontradaException extends EntidadeNaoEncontradaException {
     public CidadeNaoEncontradaException(String message) {
         super(message);
     }

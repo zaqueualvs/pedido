@@ -8,12 +8,15 @@ public abstract class Pagamento {
     private Long id;
     private EstadoPagamento estadoPagamento;
 
+    private Pedido pedido;
+
     public Pagamento() {
     }
 
-    public Pagamento(Long id, EstadoPagamento estadoPagamento) {
+    public Pagamento(Long id, EstadoPagamento estadoPagamento, Pedido pedido) {
         this.id = id;
         this.estadoPagamento = estadoPagamento;
+        this.pedido = pedido;
     }
 
     public Long getId() {

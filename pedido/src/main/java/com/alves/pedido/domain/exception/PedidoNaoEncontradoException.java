@@ -1,6 +1,6 @@
 package com.alves.pedido.domain.exception;
 
-public class PedidoNaoEncontradoException extends EntidadeNãoEncontradaException {
+public class PedidoNaoEncontradoException extends EntidadeNaoEncontradaException {
     public PedidoNaoEncontradoException(String message) {
         super(message);
     }

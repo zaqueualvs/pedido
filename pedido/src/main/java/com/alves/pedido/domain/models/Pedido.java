@@ -11,6 +11,7 @@ public class Pedido implements Serializable {
     private OffsetDateTime date;
     private List<ItemPedido> itemPedidos = new ArrayList<>();
     private Endereco enderecoEntrega;
+    private Pagamento pagamento;
     private Cliente cliente;
 
     public Pedido() {
@@ -19,11 +20,13 @@ public class Pedido implements Serializable {
     public Pedido(Long id,
                   OffsetDateTime date,
                   Endereco enderecoEntrega,
-                  Cliente cliente) {
+                  Cliente cliente,
+                  Pagamento pagamento) {
         this.id = id;
         this.date = date;
         this.enderecoEntrega = enderecoEntrega;
         this.cliente = cliente;
+        this.pagamento = pagamento;
     }
 
     public Long getId() {
@@ -64,6 +67,14 @@ public class Pedido implements Serializable {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    public Pagamento getPagamento() {
+        return pagamento;
+    }
+
+    public void setPagamento(Pagamento pagamento) {
+        this.pagamento = pagamento;
     }
 
     @Override

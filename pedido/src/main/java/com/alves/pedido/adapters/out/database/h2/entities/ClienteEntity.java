@@ -31,8 +31,8 @@ public class ClienteEntity implements Serializable {
     @CollectionTable(name = "cliente_telefone",
             joinColumns = @JoinColumn(name = "cliente_id"))
     private Set<TelefoneEntity> telefones = new HashSet<>();
-    /*@OneToMany(mappedBy = "cliente")
-    private List<PedidoEntity> pedidos = new ArrayList<>();*/
+    @OneToMany(mappedBy = "cliente")
+    private List<PedidoEntity> pedidos = new ArrayList<>();
 
     public ClienteEntity(Long id,
                          String nome,
