@@ -1,6 +1,5 @@
 package com.alves.pedido.adapters.out.database.h2.entities;
 
-import com.alves.pedido.domain.models.Endereco;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,13 +23,23 @@ public class PedidoEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
-    private OffsetDateTime date;
-    @OneToOne
+    private OffsetDateTime dataPedido;
+    @ManyToOne
     private EnderecoEntity enderecoEntrega;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private PagamentoEntity pagamento;
     @ManyToOne
     private ClienteEntity cliente;
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private List<ItemPedidoEntity> itemPedidos = new ArrayList<>();
+
+    public PedidoEntity(Long id,
+                        OffsetDateTime dataPedido,
+                        EnderecoEntity enderecoEntrega,
+                        ClienteEntity cliente) {
+        this.id = id;
+        this.dataPedido = dataPedido;
+        this.enderecoEntrega = enderecoEntrega;
+        this.cliente = cliente;
+    }
 }

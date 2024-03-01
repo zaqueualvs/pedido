@@ -89,3 +89,49 @@ CREATE TABLE endereco
         FOREIGN KEY (cliente_id)
             REFERENCES cliente (id)
 );
+
+CREATE TABLE pedido
+(
+    id                  BIGINT NOT NULL AUTO_INCREMENT,
+    data_pedido         TIMESTAMP WITH TIME ZONE,
+    cliente_id          BIGINT,
+    endereco_entrega_id BIGINT,
+
+    PRIMARY KEY (id),
+    CONSTRAINT fk_pedido_cliente
+        FOREIGN KEY (cliente_id)
+            REFERENCES cliente (id),
+    CONSTRAINT fk_pedido_endereco
+        FOREIGN KEY (endereco_entrega_id)
+            REFERENCES endereco (id)
+);
+CREATE TABLE pagamento
+(
+    pedido_id        BIGINT,
+    estado_pagamento INT,
+
+    CONSTRAINT fk_pagamento_pedido
+        FOREIGN KEY (pedido_id)
+            REFERENCES pedido (id)
+);
+
+CREATE TABLE pagamento_com_cartao
+(
+    pedido_id          BIGINT,
+    numero_de_parcelas INT,
+
+    CONSTRAINT fk_pagamento_com_cartao_pedido
+        FOREIGN KEY (pedido_id)
+            REFERENCES pedido (id)
+);
+
+CREATE TABLE pagamento_com_boleto
+(
+    pedido_id       BIGINT,
+    data_vencimento TIMESTAMP WITH TIME ZONE,
+    data_pagamento  TIMESTAMP WITH TIME ZONE,
+
+    CONSTRAINT fk_pagamento_com_boleto_pedido
+        FOREIGN KEY (pedido_id)
+            REFERENCES pedido (id)
+);

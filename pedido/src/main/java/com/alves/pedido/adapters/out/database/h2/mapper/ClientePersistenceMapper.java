@@ -10,7 +10,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
-public interface ClientePersistenceMapper extends AbstractPersistenceMapper<Cliente, ClienteEntity> {
+public interface ClientePersistenceMapper extends AbstractPersistenceMapper<Cliente, ClienteEntity>, PagamentoInstanciaMapper {
 
     @Deprecated
     @Mapping(target = "cliente", ignore = true)

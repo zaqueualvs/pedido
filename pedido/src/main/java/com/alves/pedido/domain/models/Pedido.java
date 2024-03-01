@@ -8,8 +8,9 @@ import java.util.Objects;
 
 public class Pedido implements Serializable {
     private Long id;
-    private OffsetDateTime date;
+    private OffsetDateTime dataPedido;
     private List<ItemPedido> itemPedidos = new ArrayList<>();
+
     private Endereco enderecoEntrega;
     private Pagamento pagamento;
     private Cliente cliente;
@@ -18,15 +19,13 @@ public class Pedido implements Serializable {
     }
 
     public Pedido(Long id,
-                  OffsetDateTime date,
+                  OffsetDateTime dataPedido,
                   Endereco enderecoEntrega,
-                  Cliente cliente,
-                  Pagamento pagamento) {
+                  Cliente cliente) {
         this.id = id;
-        this.date = date;
+        this.dataPedido = dataPedido;
         this.enderecoEntrega = enderecoEntrega;
         this.cliente = cliente;
-        this.pagamento = pagamento;
     }
 
     public Long getId() {
@@ -37,12 +36,12 @@ public class Pedido implements Serializable {
         this.id = id;
     }
 
-    public OffsetDateTime getDate() {
-        return date;
+    public OffsetDateTime getDataPedido() {
+        return dataPedido;
     }
 
-    public void setDate(OffsetDateTime date) {
-        this.date = date;
+    public void setDataPedido(OffsetDateTime dataPedido) {
+        this.dataPedido = dataPedido;
     }
 
     public List<ItemPedido> getItemPedidos() {

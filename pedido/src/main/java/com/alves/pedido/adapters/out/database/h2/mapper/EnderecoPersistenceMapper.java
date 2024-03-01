@@ -11,13 +11,14 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface EnderecoPersistenceMapper extends AbstractPersistenceMapper<Endereco, EnderecoEntity> {
-
     @Deprecated
     @Mapping(target = "enderecos", ignore = true)
+    @Mapping(target = "pedidos", ignore = true)
     Cliente clienteEntityToCliente(ClienteEntity clienteEntity);
 
     @Deprecated
     @Mapping(target = "enderecos", ignore = true)
+    @Mapping(target = "pedidos", ignore = true)
     ClienteEntity clienteToClienteEntity(Cliente cliente);
 
     @Deprecated

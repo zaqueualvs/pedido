@@ -11,13 +11,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-@Table(name = "pagamento")
+@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
+@Table(name = "pagamento")
 public abstract class PagamentoEntity {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long pedido_id;
     private EstadoPagamento estadoPagamento;
     @OneToOne(mappedBy = "pagamento")
-    private PedidoEntity pedidoEntity;
+    @JoinColumn(name = "pedido_id")
+    @MapsId
+    private PedidoEntity pedido;
 }

@@ -32,3 +32,7 @@ VALUES (1, 27363323),
 INSERT INTO endereco(logradouro, numero, complemento, bairro, cep, cliente_id, cidade_id)
 VALUES ('Rua Flores', 300, 'Apto 303', 'Jardim', 38220834, 1, 1),
        ('Avenida Matos', 105, 'Sala 800', 'Centro', 38777012, 1, 2);
+
+INSERT INTO pedido(data_pedido, cliente_id, endereco_entrega_id)
+VALUES ('2017-09-30 10.30.00+03', 1, 1),
+       ('2017-10-10 09.10.00+03', 1, 2);

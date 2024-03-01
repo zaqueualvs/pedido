@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(value = "estadoa")
+@RequestMapping(value = "estados")
 public class EstadoController {
 
     private final FindAllEstadoUseCase findAllEstadoUseCase;
