@@ -36,3 +36,13 @@ VALUES ('Rua Flores', 300, 'Apto 303', 'Jardim', 38220834, 1, 1),
 INSERT INTO pedido(data_pedido, cliente_id, endereco_entrega_id)
 VALUES ('2017-09-30 10.30.00+03', 1, 1),
        ('2017-10-10 09.10.00+03', 1, 2);
+
+INSERT INTO pagamento(pedido_id, estado_pagamento)
+VALUES (1, 2),
+       (2, 1);
+
+INSERT INTO pagamento_com_cartao(pedido_id, numero_de_parcelas)
+VALUES (1, 6);
+
+INSERT INTO pagamento_com_boleto(pedido_id, data_pagamento)
+VALUES (2, '2017-10-20 09.00.00+03')

@@ -2,14 +2,12 @@ package com.alves.pedido.domain.models;
 
 import java.io.Serializable;
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Pedido implements Serializable {
     private Long id;
     private OffsetDateTime dataPedido;
-    //private List<ItemPedido> itemPedidos = new ArrayList<>();
+    private Set<ItemPedido> itemPedidos = new HashSet<>();
 
     private Endereco enderecoEntrega;
     private Pagamento pagamento;
@@ -44,13 +42,13 @@ public class Pedido implements Serializable {
         this.dataPedido = dataPedido;
     }
 
-    /*public List<ItemPedido> getItemPedidos() {
+    public Set<ItemPedido> getItemPedidos() {
         return itemPedidos;
     }
 
-    public void setItemPedidos(List<ItemPedido> itemPedidos) {
+    public void setItemPedidos(Set<ItemPedido> itemPedidos) {
         this.itemPedidos = itemPedidos;
-    }*/
+    }
 
     public Endereco getEnderecoEntrega() {
         return enderecoEntrega;

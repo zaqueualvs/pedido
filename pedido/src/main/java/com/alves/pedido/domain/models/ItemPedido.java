@@ -3,6 +3,8 @@ package com.alves.pedido.domain.models;
 import java.math.BigDecimal;
 
 public class ItemPedido {
+
+    private ItemPedidoPk id = new ItemPedidoPk();
     private Double desconto;
     private Integer quantidade;
     private BigDecimal preco;
@@ -13,12 +15,16 @@ public class ItemPedido {
     }
 
     public ItemPedido(Double desconto, Integer quantidade, BigDecimal preco, Produto produto, Pedido pedido) {
+        this.id.setPedido(pedido);
+        this.id.setProduto(produto);
         this.desconto = desconto;
         this.quantidade = quantidade;
         this.preco = preco;
         this.produto = produto;
         this.pedido = pedido;
     }
+
+
 
     public Double getDesconto() {
         return desconto;
@@ -45,7 +51,7 @@ public class ItemPedido {
     }
 
     public Produto getProduto() {
-        return produto;
+        return id.getProduto();
     }
 
     public void setProduto(Produto produto) {
@@ -53,7 +59,7 @@ public class ItemPedido {
     }
 
     public Pedido getPedido() {
-        return pedido;
+        return id.getPedido();
     }
 
     public void setPedido(Pedido pedido) {

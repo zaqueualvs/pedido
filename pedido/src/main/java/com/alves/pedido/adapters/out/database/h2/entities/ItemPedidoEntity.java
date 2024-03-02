@@ -7,8 +7,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
-@AllArgsConstructor
+
 @NoArgsConstructor
 @Setter
 @Getter
@@ -17,7 +19,7 @@ import java.math.BigDecimal;
 public class ItemPedidoEntity {
 
     @EmbeddedId
-    private ItemPedidoIdEntity id;
+    private ItemPedidoPKEntity id;
     private Double desconto;
     private Integer quantidade;
     private BigDecimal preco;
@@ -29,4 +31,23 @@ public class ItemPedidoEntity {
     @ManyToOne(optional = false)
     @JoinColumn(name = "pedido_id")
     private PedidoEntity pedido;
+
+    public ItemPedidoEntity(Double desconto, Integer quantidade, BigDecimal preco, ProdutoEntity produto, PedidoEntity pedido) {
+        this.id.setPedido(pedido);
+        this.id.setProduto(produto);
+        this.desconto = desconto;
+        this.quantidade = quantidade;
+        this.preco = preco;
+        this.produto = produto;
+        this.pedido = pedido;
+    }
+
+
+    public ProdutoEntity getProduto() {
+        return id.getProduto();
+    }
+
+    public PedidoEntity getPedido() {
+        return id.getPedido();
+    }
 }

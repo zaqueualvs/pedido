@@ -18,9 +18,17 @@ public abstract class PagamentoEntity {
 
     @Id
     private Long id;
-    private EstadoPagamento estadoPagamento;
+    private Integer estadoPagamento;
     @OneToOne
     @JoinColumn(name = "pedido_id")
     @MapsId
     private PedidoEntity pedido;
+
+    public EstadoPagamento getEstadoPagamento() {
+        return EstadoPagamento.toEnum(estadoPagamento);
+    }
+
+    public void setEstadoPagamento(EstadoPagamento estadoPagamento) {
+        this.estadoPagamento = estadoPagamento.getCod();
+    }
 }

@@ -25,7 +25,7 @@ public class ClienteResponse implements Serializable {
     private TipoCliente tipoCliente;
     private List<EnderecoClienteResponse> enderecos = new ArrayList<>();
     private Set<TelefoneResponse> telefones = new HashSet<>();
-    private List<Pedido> pedidos = new ArrayList<>();
+    private List<PedidoResponse> pedidos = new ArrayList<>();
 
     public ClienteResponse(Long id, String nome, String email, String cnpjOuCpf, TipoCliente tipoCliente) {
         this.id = id;

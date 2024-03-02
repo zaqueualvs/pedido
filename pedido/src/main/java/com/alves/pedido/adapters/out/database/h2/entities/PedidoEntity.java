@@ -9,7 +9,9 @@ import lombok.Setter;
 import java.io.Serializable;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @NoArgsConstructor
@@ -31,7 +33,7 @@ public class PedidoEntity implements Serializable {
     @ManyToOne
     private ClienteEntity cliente;
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.PERSIST, orphanRemoval = true)
-    private List<ItemPedidoEntity> itemPedidos = new ArrayList<>();
+    private Set<ItemPedidoEntity> itemPedidos = new HashSet<>();
 
     public PedidoEntity(Long id,
                         OffsetDateTime dataPedido,
