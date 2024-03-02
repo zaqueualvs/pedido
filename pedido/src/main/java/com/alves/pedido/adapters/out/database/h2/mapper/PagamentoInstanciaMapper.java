@@ -14,6 +14,8 @@ public interface PagamentoInstanciaMapper {
             return pagamentoComCartaoToPagamentoComCartaoEntity((PagamentoComCartao) pagamento);
         } else if (pagamento instanceof PagamentoComBoleto) {
             return pagamentoComBoletoToPagamentoComBoletoEntity((PagamentoComBoleto) pagamento);
+        }else if(pagamento == null){
+            return null;
         }
         throw new IllegalArgumentException("Erro de instancia");
     }
@@ -30,6 +32,8 @@ public interface PagamentoInstanciaMapper {
             return pagamentoComCartaoEntityToPagamentoComCartao((PagamentoComCartaoEntity) pagamentoEntity);
         } else if (pagamentoEntity instanceof PagamentoComBoletoEntity) {
             return pagamentoComBoletoEntityToPagamentoComBoleto((PagamentoComBoletoEntity) pagamentoEntity);
+        }else if(pagamentoEntity == null){
+            return null;
         }
         throw new IllegalArgumentException("Erro de instancia");
     }

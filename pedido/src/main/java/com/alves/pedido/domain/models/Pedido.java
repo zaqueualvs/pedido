@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Pedido implements Serializable {
     private Long id;
     private OffsetDateTime dataPedido;
-    private List<ItemPedido> itemPedidos = new ArrayList<>();
+    //private List<ItemPedido> itemPedidos = new ArrayList<>();
 
     private Endereco enderecoEntrega;
     private Pagamento pagamento;
@@ -44,13 +44,13 @@ public class Pedido implements Serializable {
         this.dataPedido = dataPedido;
     }
 
-    public List<ItemPedido> getItemPedidos() {
+    /*public List<ItemPedido> getItemPedidos() {
         return itemPedidos;
     }
 
     public void setItemPedidos(List<ItemPedido> itemPedidos) {
         this.itemPedidos = itemPedidos;
-    }
+    }*/
 
     public Endereco getEnderecoEntrega() {
         return enderecoEntrega;

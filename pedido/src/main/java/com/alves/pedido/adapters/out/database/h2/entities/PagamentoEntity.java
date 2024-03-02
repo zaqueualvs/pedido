@@ -17,9 +17,9 @@ import lombok.Setter;
 public abstract class PagamentoEntity {
 
     @Id
-    private Long pedido_id;
+    private Long id;
     private EstadoPagamento estadoPagamento;
-    @OneToOne(mappedBy = "pagamento")
+    @OneToOne
     @JoinColumn(name = "pedido_id")
     @MapsId
     private PedidoEntity pedido;

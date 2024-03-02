@@ -110,9 +110,7 @@ CREATE TABLE pagamento
     pedido_id        BIGINT,
     estado_pagamento INT,
 
-    CONSTRAINT fk_pagamento_pedido
-        FOREIGN KEY (pedido_id)
-            REFERENCES pedido (id)
+    PRIMARY KEY (pedido_id)
 );
 
 CREATE TABLE pagamento_com_cartao
@@ -120,9 +118,7 @@ CREATE TABLE pagamento_com_cartao
     pedido_id          BIGINT,
     numero_de_parcelas INT,
 
-    CONSTRAINT fk_pagamento_com_cartao_pedido
-        FOREIGN KEY (pedido_id)
-            REFERENCES pedido (id)
+    PRIMARY KEY (pedido_id)
 );
 
 CREATE TABLE pagamento_com_boleto
@@ -131,7 +127,5 @@ CREATE TABLE pagamento_com_boleto
     data_vencimento TIMESTAMP WITH TIME ZONE,
     data_pagamento  TIMESTAMP WITH TIME ZONE,
 
-    CONSTRAINT fk_pagamento_com_boleto_pedido
-        FOREIGN KEY (pedido_id)
-            REFERENCES pedido (id)
+    PRIMARY KEY (pedido_id)
 );

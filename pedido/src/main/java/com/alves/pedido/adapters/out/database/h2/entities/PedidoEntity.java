@@ -26,7 +26,7 @@ public class PedidoEntity implements Serializable {
     private OffsetDateTime dataPedido;
     @ManyToOne
     private EnderecoEntity enderecoEntrega;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "pedido")
     private PagamentoEntity pagamento;
     @ManyToOne
     private ClienteEntity cliente;
