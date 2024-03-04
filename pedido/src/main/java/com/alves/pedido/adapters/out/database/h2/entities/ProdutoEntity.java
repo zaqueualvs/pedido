@@ -32,6 +32,7 @@ public class ProdutoEntity implements Serializable {
             joinColumns = @JoinColumn(name = "produto_id"),
             inverseJoinColumns = @JoinColumn(name = "categoria_id"))
     private Set<CategoriaEntity> categorias = new HashSet<>();
+    @OneToMany
     private Set<ItemPedidoEntity> itemPedido = new HashSet<>();
 
     public ProdutoEntity(Long id, String nome, BigDecimal preco) {
