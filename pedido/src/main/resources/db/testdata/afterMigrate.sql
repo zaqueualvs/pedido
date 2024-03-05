@@ -45,4 +45,9 @@ INSERT INTO pagamento_com_cartao(pedido_id, numero_de_parcelas)
 VALUES (1, 6);
 
 INSERT INTO pagamento_com_boleto(pedido_id, data_pagamento)
-VALUES (2, '2017-10-20 09.00.00+03')
+VALUES (2, '2017-10-20 09.00.00+03');
+
+INSERT INTO item_pedido(pedido_id, produto_id, desconto, quantidade, preco)
+VALUES (1, 1, 0.0, 1, 2000),
+       (1, 3, 0.0, 2, 80),
+       (2, 2, 100.0, 1, 800);

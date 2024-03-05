@@ -1,6 +1,7 @@
 package com.alves.pedido.domain.models;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.*;
 
@@ -12,6 +13,7 @@ public class Pedido implements Serializable {
     private Endereco enderecoEntrega;
     private Pagamento pagamento;
     private Cliente cliente;
+    private BigDecimal precoTotal;
 
     public Pedido() {
     }
@@ -72,6 +74,14 @@ public class Pedido implements Serializable {
 
     public void setPagamento(Pagamento pagamento) {
         this.pagamento = pagamento;
+    }
+
+    public BigDecimal calculaPrecoTotal() {
+        itemPedidos.forEach(ItemPedido::calculaSubTotal);
+        precoTotal = itemPedidos.stream()
+                .map(ItemPedido::getSubTotal)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        return precoTotal;
     }
 
     @Override

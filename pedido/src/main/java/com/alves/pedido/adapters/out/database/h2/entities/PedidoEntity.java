@@ -32,7 +32,7 @@ public class PedidoEntity implements Serializable {
     private PagamentoEntity pagamento;
     @ManyToOne
     private ClienteEntity cliente;
-    @OneToMany(mappedBy = "pedido", cascade = CascadeType.PERSIST, orphanRemoval = true)
+    @OneToMany(mappedBy = "id.pedido")
     private Set<ItemPedidoEntity> itemPedidos = new HashSet<>();
 
     public PedidoEntity(Long id,

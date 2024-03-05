@@ -8,8 +8,7 @@ public class ItemPedido {
     private Double desconto;
     private Integer quantidade;
     private BigDecimal preco;
-    private Produto produto;
-    private Pedido pedido;
+    private BigDecimal subTotal;
 
     public ItemPedido() {
     }
@@ -19,11 +18,8 @@ public class ItemPedido {
         this.id.setProduto(produto);
         this.desconto = desconto;
         this.quantidade = quantidade;
-        this.preco = preco;
-        this.produto = produto;
-        this.pedido = pedido;
+        this.preco = produto.getPreco();
     }
-
 
 
     public Double getDesconto() {
@@ -46,16 +42,13 @@ public class ItemPedido {
         return preco;
     }
 
-    public void setPreco(BigDecimal preco) {
-        this.preco = preco;
-    }
-
     public Produto getProduto() {
         return id.getProduto();
     }
 
     public void setProduto(Produto produto) {
-        this.produto = produto;
+        this.preco = produto.getPreco();
+        id.setProduto(produto);
     }
 
     public Pedido getPedido() {
@@ -63,7 +56,14 @@ public class ItemPedido {
     }
 
     public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
+        id.setPedido(pedido);
     }
 
+    public void calculaSubTotal() {
+        subTotal = preco.multiply(new BigDecimal(quantidade));
+    }
+
+    public BigDecimal getSubTotal() {
+        return subTotal;
+    }
 }

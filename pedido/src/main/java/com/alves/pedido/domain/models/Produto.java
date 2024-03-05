@@ -12,6 +12,7 @@ public class Produto implements Serializable {
     private String nome;
     private BigDecimal preco;
     private Set<Categoria> categorias = new HashSet<>();
+    private Set<ItemPedido> ItemPedidos = new HashSet<>();
 
     public Produto() {
     }
@@ -52,6 +53,14 @@ public class Produto implements Serializable {
 
     public void setCategorias(Set<Categoria> categorias) {
         this.categorias = categorias;
+    }
+
+    public Set<ItemPedido> getItemPedidos() {
+        return ItemPedidos;
+    }
+
+    public void setItemPedidos(Set<ItemPedido> itemPedidos) {
+        ItemPedidos = itemPedidos;
     }
 
     @Override

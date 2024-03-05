@@ -129,3 +129,19 @@ CREATE TABLE pagamento_com_boleto
 
     PRIMARY KEY (pedido_id)
 );
+
+CREATE TABLE item_pedido
+(
+    pedido_id  BIGINT NOT NULL,
+    produto_id BIGINT NOT NULL,
+    desconto   DECIMAL(5, 2),
+    quantidade INTEGER,
+    preco      DECIMAL(10, 2),
+
+    CONSTRAINT fk_item_pedido_pedido
+        FOREIGN KEY (pedido_id)
+            REFERENCES pedido (id),
+    CONSTRAINT fk_item_pedido_produto
+        FOREIGN KEY (produto_id)
+            REFERENCES produto (id)
+)
