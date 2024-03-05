@@ -76,11 +76,14 @@ public class Pedido implements Serializable {
         this.pagamento = pagamento;
     }
 
-    public BigDecimal calculaPrecoTotal() {
+    public void calculaPrecoTotal() {
         itemPedidos.forEach(ItemPedido::calculaSubTotal);
         precoTotal = itemPedidos.stream()
                 .map(ItemPedido::getSubTotal)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
+    }
+
+    public BigDecimal getPrecoTotal() {
         return precoTotal;
     }
 
